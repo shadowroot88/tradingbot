@@ -6,7 +6,6 @@ services:
     buildCommand: ""
     startCommand: bash start.sh
     envVars:
-envVars:
     - key: FREQTRADE__EXCHANGE__KEY
       value: your_key
     - key: FREQTRADE__EXCHANGE__SECRET
@@ -17,3 +16,6 @@ envVars:
       value: "admin"
     - key: FREQTRADE__API_SERVER__PASSWORD
       value: "admin"
+    systemDependencies:
+      - build-essential  # Dla gcc, make itp.
+      - libatlas-base-dev  # Często wymagane przez TA-Lib
