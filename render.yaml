@@ -6,19 +6,14 @@ services:
     buildCommand: ""
     startCommand: bash start.sh
     envVars:
-      - key: FT_API_KEY
-        value: YOUR_API_KEY
-      - key: FT_API_SECRET
-        value: YOUR_API_SECRET
-      - key: FT_WEB_PASS
-        value: YOUR_PASSWORD
-      - key: FREQTRADE__API_SERVER__ENABLED
-        value: "true"
-      - key: FREQTRADE__API_SERVER__USERNAME
-        value: "admin"
-      - key: FREQTRADE__API_SERVER__PASSWORD
-        value: "$FT_WEB_PASS"
-      - key: FREQTRADE__EXCHANGE__API_KEY
-        value: "$FT_API_KEY"
-      - key: FREQTRADE__EXCHANGE__API_SECRET
-        value: "$FT_API_SECRET"
+envVars:
+    - key: FREQTRADE__EXCHANGE__KEY
+      value: your_key
+    - key: FREQTRADE__EXCHANGE__SECRET
+      value: your_secret
+    - key: FREQTRADE__API_SERVER__ENABLED
+      value: "true"
+    - key: FREQTRADE__API_SERVER__USERNAME
+      value: "admin"
+    - key: FREQTRADE__API_SERVER__PASSWORD
+      value: "admin"
