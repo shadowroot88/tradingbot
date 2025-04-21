@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: freqtrade-lacki
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: bash start.sh
+    envVars:
+      - key: FT_API_KEY
+        value: YOUR_API_KEY
+      - key: FT_API_SECRET
+        value: YOUR_API_SECRET
+      - key: FT_WEB_PASS
+        value: YOUR_PASSWORD
+      - key: FREQTRADE__API_SERVER__ENABLED
+        value: "true"
+      - key: FREQTRADE__API_SERVER__USERNAME
+        value: "admin"
+      - key: FREQTRADE__API_SERVER__PASSWORD
+        value: "$FT_WEB_PASS"
+      - key: FREQTRADE__EXCHANGE__API_KEY
+        value: "$FT_API_KEY"
+      - key: FREQTRADE__EXCHANGE__API_SECRET
+        value: "$FT_API_SECRET"
