@@ -1,19 +1,17 @@
 #!/bin/bash
 
-echo "📦 Instalacja zależności systemowych..."
-apt-get update -y && apt-get install -y build-essential curl git libssl-dev libffi-dev python3-dev
-
-echo "🐍 Tworzenie środowiska Python i instalacja wymaganych bibliotek..."
+echo "🔄 Instalacja zależności..."
 python3 -m venv .venv
 source .venv/bin/activate
-
 pip install --upgrade pip
+
+echo "🐍 Instalacja bibliotek Python..."
 pip install numpy
 pip install ta-lib-bin
 pip install freqtrade
 
-echo "🖥 Instalacja interfejsu webowego Freqtrade UI..."
+echo "🖥 Instalacja UI Freqtrade..."
 freqtrade install-ui
 
-echo "🚀 Uruchamianie bota Freqtrade z interfejsem webowym..."
+echo "🚀 Uruchamianie Freqtrade Web..."
 freqtrade webserver --config config.json
