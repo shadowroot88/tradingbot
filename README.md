@@ -1,0 +1,2 @@
+# tradingbot
+projekt bota crypto
